@@ -6,10 +6,13 @@ import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
-public class CardsUseCase {
-    private CardsRepository cardsRepository;
+public class SaveCardsUseCase {
+    private final CardsRepository cardsRepository;
 
     public Mono<Cards> saveCards(Cards cards){
+        /*
+            Logic
+         */
        return cardsRepository.save(cards);
     }
 }

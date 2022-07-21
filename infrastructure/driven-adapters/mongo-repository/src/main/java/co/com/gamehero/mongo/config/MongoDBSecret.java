@@ -7,5 +7,4 @@ import lombok.Getter;
 public class MongoDBSecret {
 private final String uri;
 
-
 }
