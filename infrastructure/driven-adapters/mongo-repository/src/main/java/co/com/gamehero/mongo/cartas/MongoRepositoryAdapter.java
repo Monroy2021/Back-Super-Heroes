@@ -1,16 +1,16 @@
-package co.com.gamehero.mongo;
+package co.com.gamehero.mongo.cartas;
 
-import co.com.gamehero.model.cards.Cards;
-import co.com.gamehero.model.cards.gateways.CardsRepository;
+import co.com.gamehero.model.cartas.Cartas;
+import co.com.gamehero.model.cartas.gateways.CartasRepository;
+import co.com.gamehero.mongo.cartas.CartasDocument;
+import co.com.gamehero.mongo.cartas.MongoDBRepository;
 import co.com.gamehero.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Mono;
 
 @Repository
-public class MongoRepositoryAdapter extends AdapterOperations<Cards, CardsDocument, String, MongoDBRepository>
-implements CardsRepository
+public class MongoRepositoryAdapter extends AdapterOperations<Cartas, CartasDocument, String, MongoDBRepository>
+implements CartasRepository
 {
 
     public MongoRepositoryAdapter(MongoDBRepository repository, ObjectMapper mapper) {
@@ -19,7 +19,7 @@ implements CardsRepository
          *  super(repository, mapper, d -> mapper.mapBuilder(d,ObjectModel.ObjectModelBuilder.class).build());
          *  Or using mapper.map with the class of the object model
          */
-        super(repository, mapper, d -> mapper.map(d, Cards.class));
+        super(repository, mapper, d -> mapper.map(d, Cartas.class));
     }
 
 }

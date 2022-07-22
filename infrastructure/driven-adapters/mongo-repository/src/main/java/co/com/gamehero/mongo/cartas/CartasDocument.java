@@ -1,6 +1,6 @@
-package co.com.gamehero.mongo;
+package co.com.gamehero.mongo.cartas;
 
-import co.com.gamehero.model.cards.*;
+import co.com.gamehero.model.cartas.*;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Document
 @Data
-public class CardsDocument {
+public class CartasDocument {
 
     @Id
     private String id;

@@ -1,4 +1,4 @@
-package co.com.gamehero.model.cards;
+package co.com.gamehero.model.cartas;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Url {
-    private String valor;
+public class Poder {
+    private Integer valorxp;
 }

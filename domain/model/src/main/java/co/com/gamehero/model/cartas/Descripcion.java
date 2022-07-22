@@ -1,4 +1,4 @@
-package co.com.gamehero.model.cards;
+package co.com.gamehero.model.cartas;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

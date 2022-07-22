@@ -1,4 +1,4 @@
-package co.com.gamehero.model.cards;
+package co.com.gamehero.model.cartas;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.util.List;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cards {
+public class Cartas {
     private String id;
     private Url url;
     private Descripcion descripcion;

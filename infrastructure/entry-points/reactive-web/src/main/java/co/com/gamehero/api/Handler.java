@@ -1,9 +1,9 @@
 package co.com.gamehero.api;
 
-import co.com.gamehero.model.cards.Cards;
-import co.com.gamehero.usecase.cards.SaveCardsUseCase;
-import co.com.gamehero.usecase.getcards.GetCardsUseCase;
-import co.com.gamehero.usecase.updatecards.UpdateCardsUseCase;
+import co.com.gamehero.model.cartas.Cartas;
+import co.com.gamehero.usecase.cards.SaveCartasUseCase;
+import co.com.gamehero.usecase.getcards.GetCartasUseCase;
+import co.com.gamehero.usecase.updatecards.UpdateCartasUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -15,28 +15,28 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class Handler {
 
-    private  final SaveCardsUseCase saveCardsUseCase;
-    private  final GetCardsUseCase getCardsUseCase;
+    private  final SaveCartasUseCase saveCartasUseCase;
+    private  final GetCartasUseCase getCartasUseCase;
 
-    private final UpdateCardsUseCase updateCardsUseCase;
-    public Mono<ServerResponse> POSTCardsUseCase(ServerRequest serverRequest){
-        return serverRequest.bodyToMono(Cards.class)
-                .flatMap(cards -> saveCardsUseCase.saveCards(cards))
+    private final UpdateCartasUseCase updateCartasUseCase;
+    public Mono<ServerResponse> POSTCartasUseCase(ServerRequest serverRequest){
+        return serverRequest.bodyToMono(Cartas.class)
+                .flatMap(cards -> saveCartasUseCase.saveCartas(cards))
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
     }
 
-    public Mono<ServerResponse> UPDATECardsUseCase(ServerRequest serverRequest){
+    public Mono<ServerResponse> UPDATECartasUseCase(ServerRequest serverRequest){
         var id = serverRequest.pathVariable("id");
-        return serverRequest.bodyToMono(Cards.class)
-                .flatMap(cards -> updateCardsUseCase.updateCards(id,cards))
+        return serverRequest.bodyToMono(Cartas.class)
+                .flatMap(cards -> updateCartasUseCase.updateCartas(id,cards))
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
     }
 
-    public Mono<ServerResponse> GETCardsUseCase(ServerRequest serverRequest){
+    public Mono<ServerResponse> GETCartasUseCase(ServerRequest serverRequest){
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(getCardsUseCase.getCards(), Cards.class);
+                .body(getCartasUseCase.getCartas(), Cartas.class);
     }
 
 }

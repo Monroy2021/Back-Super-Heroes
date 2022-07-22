@@ -1,4 +1,4 @@
-package co.com.gamehero.model.cards;
+package co.com.gamehero.model.cartas;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Poder {
-    private Integer valorxp;
+public class Caracteristicas {
+
+    private String tipo;
+    private String estilo;
+
 }
