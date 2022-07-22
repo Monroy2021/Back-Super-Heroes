@@ -13,8 +13,8 @@ import java.util.List;
 public class Cartas {
     private String id;
     private Url url;
-    private Descripcion descripcion;
-    private Poder poder;
+    private String descripcion;
+    private String poder;
     private Caracteristicas caracteristicas;
     private List<Personajes> personajesList;
 }

@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Url {
-    private String valor;
+    private String urlVisible;
+    private String urlOculto;
 }
