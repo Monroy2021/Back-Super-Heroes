@@ -7,6 +7,7 @@ import co.com.gamehero.mongo.cartas.MongoDBRepository;
 import co.com.gamehero.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
 
 @Repository
 public class MongoRepositoryAdapter extends AdapterOperations<Cartas, CartasDocument, String, MongoDBRepository>

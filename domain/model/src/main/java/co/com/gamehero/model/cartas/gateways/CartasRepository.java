@@ -5,10 +5,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface CartasRepository {
-    Mono<Cartas> save(Cartas cartas); //Guardar
+    Mono<Cartas> save(Cartas cartas); //Guardar y actualizar
 
     Flux<Cartas> findAll(); //listar cards
 
     Mono<Void> deleteById(String id); //eliminar
-
 }

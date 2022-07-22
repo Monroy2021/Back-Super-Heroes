@@ -2,6 +2,7 @@ package co.com.gamehero.api;
 
 import co.com.gamehero.model.cartas.Cartas;
 import co.com.gamehero.usecase.cards.SaveCartasUseCase;
+import co.com.gamehero.usecase.deletecarta.DeleteCartaUseCase;
 import co.com.gamehero.usecase.getcards.GetCartasUseCase;
 import co.com.gamehero.usecase.updatecards.UpdateCartasUseCase;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,8 @@ public class Handler {
     private  final SaveCartasUseCase saveCartasUseCase;
     private  final GetCartasUseCase getCartasUseCase;
 
+    private final DeleteCartaUseCase deleteCartaUseCase;
+
     private final UpdateCartasUseCase updateCartasUseCase;
     public Mono<ServerResponse> POSTCartasUseCase(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Cartas.class)
@@ -32,6 +35,12 @@ public class Handler {
                 .flatMap(cards -> updateCartasUseCase.updateCartas(id,cards))
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
+    }
+
+    public Mono<ServerResponse> DELETECartasUseCase(ServerRequest serverRequest){
+        var id = serverRequest.pathVariable("id");
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
+                .body(deleteCartaUseCase.deleteCarta(id), Void.class);
     }
 
     public Mono<ServerResponse> GETCartasUseCase(ServerRequest serverRequest){
