@@ -6,6 +6,7 @@ import co.com.gamehero.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Mono;
 
 @Repository
 public class MongoRepositoryAdapter extends AdapterOperations<Cards, CardsDocument, String, MongoDBRepository>
@@ -20,4 +21,5 @@ implements CardsRepository
          */
         super(repository, mapper, d -> mapper.map(d, Cards.class));
     }
+
 }

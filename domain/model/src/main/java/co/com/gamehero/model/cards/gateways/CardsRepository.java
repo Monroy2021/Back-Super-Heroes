@@ -5,7 +5,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface CardsRepository {
-    Mono<Cards> save(Cards cards);
+    Mono<Cards> save(Cards cards); //Guardar
 
-    Flux<Cards> findAll();
+    Flux<Cards> findAll(); //listar cards
+
 }
