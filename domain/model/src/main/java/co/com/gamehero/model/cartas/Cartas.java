@@ -15,6 +15,7 @@ public class Cartas {
     private Url url;
     private String descripcion;
     private String poder;
+    private CartaEstado cartaEstado;
     private Caracteristicas caracteristicas;
     private List<Personajes> personajesList;
 }
