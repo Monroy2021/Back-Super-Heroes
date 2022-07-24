@@ -1,8 +1,8 @@
-package co.com.gamehero.usecase.cards;
+package co.com.gamehero.usecase.cartas.savecards;
 
 import co.com.gamehero.model.cartas.Cartas;
 import co.com.gamehero.model.cartas.gateways.CartasRepository;
-import co.com.gamehero.usecase.getcards.GetCartasUseCase;
+import co.com.gamehero.usecase.cartas.getcards.GetCartasUseCase;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 

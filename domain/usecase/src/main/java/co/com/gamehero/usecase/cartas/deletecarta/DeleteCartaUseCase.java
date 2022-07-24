@@ -1,4 +1,4 @@
-package co.com.gamehero.usecase.deletecarta;
+package co.com.gamehero.usecase.cartas.deletecarta;
 
 import co.com.gamehero.model.cartas.gateways.CartasRepository;
 import lombok.RequiredArgsConstructor;

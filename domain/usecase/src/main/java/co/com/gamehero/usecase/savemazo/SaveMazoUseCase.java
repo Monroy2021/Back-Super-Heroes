@@ -2,7 +2,7 @@ package co.com.gamehero.usecase.savemazo;
 
 import co.com.gamehero.model.mazo.Mazo;
 import co.com.gamehero.model.mazo.gateways.MazoRepository;
-import co.com.gamehero.usecase.getcards.GetCartasUseCase;
+import co.com.gamehero.usecase.cartas.getcards.GetCartasUseCase;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 

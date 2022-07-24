@@ -2,11 +2,11 @@ package co.com.gamehero.api;
 
 import co.com.gamehero.model.cartas.Cartas;
 import co.com.gamehero.model.mazo.Mazo;
-import co.com.gamehero.usecase.cards.SaveCartasUseCase;
-import co.com.gamehero.usecase.deletecarta.DeleteCartaUseCase;
-import co.com.gamehero.usecase.getcards.GetCartasUseCase;
+import co.com.gamehero.usecase.cartas.savecards.SaveCartasUseCase;
+import co.com.gamehero.usecase.cartas.deletecarta.DeleteCartaUseCase;
+import co.com.gamehero.usecase.cartas.getcards.GetCartasUseCase;
 import co.com.gamehero.usecase.savemazo.SaveMazoUseCase;
-import co.com.gamehero.usecase.updatecards.UpdateCartasUseCase;
+import co.com.gamehero.usecase.cartas.updatecards.UpdateCartasUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package co.com.gamehero.usecase.updatecards;
+package co.com.gamehero.usecase.cartas.updatecards;
 
 import co.com.gamehero.model.cartas.Cartas;
 import co.com.gamehero.model.cartas.gateways.CartasRepository;
