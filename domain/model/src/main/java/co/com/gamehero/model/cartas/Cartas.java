@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Cartas {
     private String id;
+    private Integer indice;
     private Url url;
     private String descripcion;
     private String poder;

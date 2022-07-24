@@ -13,7 +13,7 @@ public class CartasDocument {
 
     @Id
     private String id;
-
+    private Integer indice;
     private Url url;
     private String descripcion;
     private String poder;

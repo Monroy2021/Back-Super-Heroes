@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -13,6 +14,6 @@ import java.util.Set;
 @AllArgsConstructor
 public class Mazo {
     private String id;
-    private Set<Cartas> cartasSet;
+    private List<Cartas> cartasSet;
     private String cantidad;
 }
