@@ -1,4 +1,4 @@
-package co.com.gamehero.usecase.savejugador;
+package co.com.gamehero.usecase.jugador.savejugador;
 
 import co.com.gamehero.model.jugador.Jugador;
 import co.com.gamehero.model.jugador.gateways.JugadorRepository;
@@ -13,10 +13,12 @@ public class SavejugadorUseCase {
     private final JugadorRepository jugadorRepository;
     private final SaveMazoUseCase saveMazoUseCase;
 
-    public Mono<Jugador> saveJugador(Jugador jugador){
-        var mazo = saveMazoUseCase.saveMazo();
-        jugador.setMazo(Mazo.builder().build());
-       return jugadorRepository.save(jugador);
+    public Mono<Jugador> saveJugador(Jugador jugador) {
+       return saveMazoUseCase.saveMazo()
+                .map(element -> {
+                    jugador.setMazo(element);
+                    return jugador;
+                }).flatMap(jugadorRepository::save);
     }
 
 }

@@ -17,7 +17,8 @@ public RouterFunction<ServerResponse> routerFunction(Handler handler) {
     .and(route(GET("api/heroes"), handler::GETCartasUseCase))
     .and(route(POST("/api/heroes/update/{id}"), handler::UPDATECartasUseCase))
     .and(route(DELETE("/api/heroes/delete/{id}"), handler::DELETECartasUseCase))
-    .and(route(POST("/api/heroes/mazo/save"), handler::POSTMazoUseCase));
+    .and(route(POST("/api/heroes/mazo/save"), handler::POSTMazoUseCase))
+    .and(route(POST("/api/heroes/jugador/save"), handler::POSTJugadorUseCase));
     //return route(GET("/api/usecase/path"), handler::listenGETUseCase);
     //.andRoute(POST("/api/usecase/otherpath"), handler::listenPOSTUseCase).and(route(GET("/api/otherusercase/path"), handler::listenGETOtherUseCase));
 

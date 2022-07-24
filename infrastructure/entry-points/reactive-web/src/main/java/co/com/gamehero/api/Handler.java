@@ -1,10 +1,12 @@
 package co.com.gamehero.api;
 
 import co.com.gamehero.model.cartas.Cartas;
+import co.com.gamehero.model.jugador.Jugador;
 import co.com.gamehero.model.mazo.Mazo;
 import co.com.gamehero.usecase.cartas.savecards.SaveCartasUseCase;
 import co.com.gamehero.usecase.cartas.deletecarta.DeleteCartaUseCase;
 import co.com.gamehero.usecase.cartas.getcards.GetCartasUseCase;
+import co.com.gamehero.usecase.jugador.savejugador.SavejugadorUseCase;
 import co.com.gamehero.usecase.savemazo.SaveMazoUseCase;
 import co.com.gamehero.usecase.cartas.updatecards.UpdateCartasUseCase;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +29,8 @@ public class Handler {
 
     private final SaveMazoUseCase saveMazoUseCase;
 
+    private final SavejugadorUseCase savejugadorUseCase;
+
     public Mono<ServerResponse> POSTCartasUseCase(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Cartas.class)
                 .flatMap(cards -> saveCartasUseCase.saveCartas(cards))
@@ -39,6 +43,15 @@ public class Handler {
                 .flatMap(mazo -> saveMazoUseCase.saveMazo())
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
+
+    }
+
+    public Mono<ServerResponse> POSTJugadorUseCase(ServerRequest serverRequest){
+        return serverRequest.bodyToMono(Jugador.class)
+                .flatMap(jugador -> savejugadorUseCase.saveJugador(jugador))
+                .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(result));
+
 
     }
 

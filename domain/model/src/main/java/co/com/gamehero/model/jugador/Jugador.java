@@ -15,6 +15,6 @@ public class Jugador {
     private String usuarioId;
     private Mazo mazo;
     private String alias;
-    private String puntaje;
+    private Integer puntaje;
 
 }
