@@ -36,7 +36,7 @@ public class Handler {
 
     public Mono<ServerResponse> POSTMazoUseCase(ServerRequest serverRequest){
         return serverRequest.bodyToMono(Mazo.class)
-                .flatMap(mazo -> saveMazoUseCase.saveMazo(mazo))
+                .flatMap(mazo -> saveMazoUseCase.saveMazo())
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
 

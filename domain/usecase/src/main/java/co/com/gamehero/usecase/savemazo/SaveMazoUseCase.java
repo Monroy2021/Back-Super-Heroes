@@ -15,7 +15,8 @@ public class SaveMazoUseCase {
     private final MazoRepository mazoRepository;
     private final GetCartasUseCase getCartasUseCase;
 
-    public Mono<Mazo> saveMazo(Mazo mazo) {
+    public Mono<Mazo> saveMazo() {
+        var mazo = new Mazo();
         return getCartasUseCase.getCartas()
                 .collectList()
                 .map(random -> {
