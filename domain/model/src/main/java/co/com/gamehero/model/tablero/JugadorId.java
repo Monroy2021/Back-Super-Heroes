@@ -1,4 +1,4 @@
-package co.com.gamehero.model.cartas;
+package co.com.gamehero.model.tablero;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartaEstado {
-    private Boolean esOculta;
+public class JugadorId {
+    private String jugadorId;
 }
