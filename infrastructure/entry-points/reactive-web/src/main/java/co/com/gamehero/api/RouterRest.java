@@ -19,7 +19,8 @@ public class RouterRest {
                 .and(route(DELETE("/api/heroes/delete/{id}"), handler::DELETECartasUseCase))
                 .and(route(POST("/api/heroes/mazo/save"), handler::POSTMazoUseCase))
                 .and(route(POST("/api/heroes/jugador/save"), handler::POSTJugadorUseCase))
-                .and(route(POST("/api/heroes/tablero/save"), handler::POSTTableroUseCase));
+                .and(route(POST("/api/heroes/tablero/save"), handler::POSTTableroUseCase))
+                .and(route(POST("/api/heroes/usuario/save"), handler::POSTUsarioUseCase));
         //return route(GET("/api/usecase/path"), handler::listenGETUseCase);
         //.andRoute(POST("/api/usecase/otherpath"), handler::listenPOSTUseCase).and(route(GET("/api/otherusercase/path"), handler::listenGETOtherUseCase));
 
