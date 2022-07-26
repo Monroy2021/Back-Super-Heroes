@@ -13,7 +13,7 @@ public class SaveTableroUseCase {
 
     public Mono<Tablero> saveTablero(){
         var tablero = new Tablero();
-        tablero.setCartaEstado(new CartaEstado(false));
+        tablero.setCartaEstado(new CartaEstado(true));
         tablero.setTiempo(20);
         return tableroRepository.save(tablero);
     }
