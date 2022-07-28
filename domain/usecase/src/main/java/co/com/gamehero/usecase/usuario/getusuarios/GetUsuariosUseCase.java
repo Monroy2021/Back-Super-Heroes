@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 
 @RequiredArgsConstructor
-public class GetusuariosUseCase {
+public class GetUsuariosUseCase {
 
     private final UsuarioRepository usuarioRepository;
 
