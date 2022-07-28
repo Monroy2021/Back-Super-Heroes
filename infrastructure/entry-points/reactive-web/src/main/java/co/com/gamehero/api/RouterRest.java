@@ -2,6 +2,7 @@ package co.com.gamehero.api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
@@ -10,6 +11,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 
 @Configuration
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class RouterRest {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(Handler handler) {
