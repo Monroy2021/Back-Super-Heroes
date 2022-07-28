@@ -7,4 +7,6 @@ public interface JugadorRepository {
 
     Mono<Jugador> save(Jugador jugador);
 
+    Mono<Jugador> findById(String id);
+
 }

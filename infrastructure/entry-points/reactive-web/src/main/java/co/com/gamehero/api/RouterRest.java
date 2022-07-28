@@ -20,7 +20,9 @@ public class RouterRest {
                 .and(route(POST("/api/heroes/mazo/save"), handler::POSTMazoUseCase))
                 .and(route(POST("/api/heroes/jugador/save"), handler::POSTJugadorUseCase))
                 .and(route(POST("/api/heroes/tablero/save"), handler::POSTTableroUseCase))
-                .and(route(POST("/api/heroes/usuario/save"), handler::POSTUsarioUseCase));
+                .and(route(POST("/api/heroes/usuario/save"), handler::POSTUsarioUseCase))
+                .and(route(POST("/api/heroes/juego/save"), handler::POSTJuego))
+                .and(route(GET("/api/heroes/jugador/listar/{id}"), handler::GETIdjugadorUseCase));
         //return route(GET("/api/usecase/path"), handler::listenGETUseCase);
         //.andRoute(POST("/api/usecase/otherpath"), handler::listenPOSTUseCase).and(route(GET("/api/otherusercase/path"), handler::listenGETOtherUseCase));
 
