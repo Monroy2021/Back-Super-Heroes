@@ -15,10 +15,12 @@ import co.com.gamehero.usecase.savejuego.SavejuegoUseCase;
 import co.com.gamehero.usecase.savemazo.SaveMazoUseCase;
 import co.com.gamehero.usecase.cartas.updatecards.UpdateCartasUseCase;
 import co.com.gamehero.usecase.savetablero.SaveTableroUseCase;
+import co.com.gamehero.usecase.usuario.getusuarios.GetUsuariosUseCase;
 import co.com.gamehero.usecase.usuario.saveusuario.SaveUsuarioUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
@@ -41,6 +43,8 @@ public class Handler {
     private final SaveTableroUseCase saveTableroUseCase;
 
     private final SaveUsuarioUseCase saveUsuarioUseCase;
+
+    private final GetUsuariosUseCase getUsuariosUseCase;
 
     private final SavejuegoUseCase savejuegoUseCase;
 
@@ -74,6 +78,11 @@ public class Handler {
                 .flatMap((usuario -> saveUsuarioUseCase.saveUsuario(usuario)))
                 .flatMap(result -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result));
+    }
+
+    public Mono<ServerResponse> GETUsuarioUseCase(ServerRequest serverRequest){
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
+                .body(getUsuariosUseCase.getUsuarios(), Cartas.class);
     }
 
     public Mono<ServerResponse> POSTTableroUseCase(ServerRequest serverRequest){

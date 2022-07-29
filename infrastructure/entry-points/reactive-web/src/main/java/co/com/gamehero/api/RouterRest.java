@@ -3,6 +3,7 @@ package co.com.gamehero.api;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
@@ -11,7 +12,6 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 
 @Configuration
-@CrossOrigin(origins = {"http://localhost:4200"})
 public class RouterRest {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(Handler handler) {
@@ -23,6 +23,7 @@ public class RouterRest {
                 .and(route(POST("/api/heroes/jugador/save"), handler::POSTJugadorUseCase))
                 .and(route(POST("/api/heroes/tablero/save"), handler::POSTTableroUseCase))
                 .and(route(POST("/api/heroes/usuario/save"), handler::POSTUsarioUseCase))
+                .and(route(GET("/api/heroes/usuario/listar"), handler::GETUsuarioUseCase))
                 .and(route(POST("/api/heroes/juego/save"), handler::POSTJuego))
                 .and(route(GET("/api/heroes/jugador/listar/{id}"), handler::GETIdjugadorUseCase));
         //return route(GET("/api/usecase/path"), handler::listenGETUseCase);
